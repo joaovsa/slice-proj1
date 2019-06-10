@@ -27,4 +27,6 @@ cd slice-proj1/app/server
 docker build -t py_server .
 
 #docker port foward <host>:<container>
-docker run -p 5000:5000 py_server
+#roda em processo separado p/ não travar o cmd
+#testar post via cmd curl -d 'info=blabla' <endereco>
+docker run -p 5000:5000 py_server &
