@@ -14,10 +14,7 @@ sudo systemctl enable docker
 sudo apt -y upgrade
 
 #Iniciando o Docker Swarm Master na VM Master
-s=$(sudo docker swarm init --advertise-addr 192.168.50.2:2377)
-
-#Passando o token gerado no comando anterior para um arquivo externo para ser lido pelo script do worker
-echo ${s:136:135} > token.txt
+sudo docker swarm init --advertise-addr 192.168.33.100:2377 | sed 5!d > /vagrant/join.sh
 
 #baixa repositorio e entra na pasta
 git clone https://github.com/joaovsa/slice-proj1
@@ -30,3 +27,5 @@ docker build -t py_server .
 #roda em processo separado p/ não travar o cmd
 #testar post via cmd curl -d 'info=blabla' <endereco>
 docker run -p 5000:5000 py_server &
+
+#criar docker service

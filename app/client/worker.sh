@@ -12,15 +12,15 @@ sudo systemctl start docker
 sudo systemctl enable docker
 sudo apt -y upgrade
 
-#Copia o arquivo token.txt da VM Master
-scp master@192.168.50.2:token.txt /home/vagrant
-
-#Executando o token gerado pela VM Master para se juntar como Worker
-source token.txt
-
 #baixa repositorio e entra na pasta
 git clone https://github.com/joaovsa/slice-proj1
 cd slice-proj1/app/client
+
+#Adiciona a permissão p/ join no Docker Swarm
+chmod +x /vagrant/join.sh
+
+#Adiciona o worker no Cluster Swarm c/ chave gerada pelo master
+bash /vagrant/join.sh
 
 #Cria imagem do Dockerfile no container
 docker build -t py_client .
