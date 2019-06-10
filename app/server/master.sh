@@ -13,12 +13,13 @@ sudo systemctl start docker
 sudo systemctl enable docker
 sudo apt -y upgrade
 
-#Iniciando o Docker Swarm Master na VM Master
-sudo docker swarm init --advertise-addr 192.168.33.100:2377 | sed 5!d > /vagrant/join.sh
-
 #baixa repositorio e entra na pasta
 git clone https://github.com/joaovsa/slice-proj1
 cd slice-proj1/app/server
+
+#Iniciando o Docker Swarm Master na VM Master
+sudo docker swarm init --advertise-addr 192.168.50.2:2377 | sed 5!d > /vagrant/join.sh
+
 
 #Cria imagem do Dockerfile no container
 docker build -t py_server .
