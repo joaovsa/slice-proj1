@@ -23,9 +23,18 @@ Verificar e iniciar as VMs. As etapas de instalação e configuração do docker
 ```
 
 ## Passo 3:
+ Acessar a VM Master e iniciar outro terminal para acessar a VM Worker
+
+```markdown
+ $ vagrant ssh master
+ 
+ #Em outro terminal
+ $ vagrant ssh worker
+```
+
+## Passo 4:
  ...
 
 ```markdown
- ...
+ $ ...
 ```
-
