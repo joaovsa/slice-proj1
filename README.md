@@ -3,7 +3,7 @@
 Docente: Fábio Verdi
 
 ### Objetivo:
- Criação de server e client envolvidos em containers docker e controlados por Vagrant
+ Criação de server e client envolvidos em containers docker e controlados por Vagrant.
 
 ## Passo 1:
 Clonar este repositório e acessar a pasta /vm
