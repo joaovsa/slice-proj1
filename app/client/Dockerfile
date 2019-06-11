@@ -8,6 +8,7 @@ LABEL maintainer="Jeeva S. Chelladhurai"
 RUN pip install flask
 RUN pip install flask_restful
 RUN pip install requests
+RUN pip install docker 
 
 #copia o arquivo do servidor p/ o container
 COPY AppClient.py /src/
