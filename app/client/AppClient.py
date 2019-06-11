@@ -16,6 +16,7 @@ class SysInfo(Resource):
             stats = data['info']
             print("POST solicitado ao cli endpoint, enviando...\n")
             self.oper(1, stats)
+            
         except:
             data = request.get_json()
             id = data['id']
