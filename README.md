@@ -27,7 +27,7 @@ Verificar e iniciar as VMs. As etapas de instalação e configuração do docker
 
 ```markdown
  $ vagrant status
- $ Cat Vagrantfile
+ $ cat Vagrantfile
  $ vagrant up
 ```
 
