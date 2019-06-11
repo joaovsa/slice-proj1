@@ -22,11 +22,14 @@ sudo docker swarm init --advertise-addr 192.168.50.2:2377 | sed 5!d > /vagrant/j
 
 
 #Cria imagem do Dockerfile no container
-docker build -t py_server .
+sudo docker build -t py_server .
 
 #docker port foward <host>:<container>
 #roda em processo separado p/ não travar o cmd
 #testar post via cmd curl -d 'info=blabla' <endereco>
-docker run -p 5000:5000 py_server &
+#docker run -p 5000:5000 py_server &
 
 #criar docker service
+sudo docker network create -d overlay --subnet 10.0.10.0/24 ClusterNet
+#porta do node:porta exposed pelo dockerfile
+sudo docker service create --name webservice_py --network ClusterNet --replicas 1 -p 2377:5000 py_server
