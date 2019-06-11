@@ -1,7 +1,9 @@
 # Trabalho prático p/ disciplina de TAAD
 ## UFSCar - Campus Sorocaba - 2019/1
 Docente: Fábio Verdi
+
 Auxiliares: André Beltrami e Paulo Ditarso
+
 
 ### Objetivo:
  Criação automatizada de duas VMs do Vagrant com container docker instalado. Numa VM haverá um container com aplicação python assumindo papel de servidor, e na segunda VM uma aplicação containerizada com a aplicação cliente, que faz requisições HTTP (GET e POST) para o servidor.
