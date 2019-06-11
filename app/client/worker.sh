@@ -13,6 +13,10 @@ sudo systemctl enable docker
 sudo apt -y upgrade
 sudo gpasswd -a "${USER}" docker
 
+sudo apt install python3-pip
+sudo pip install docker
+sudo pip install requests
+
 #baixa repositorio e entra na pasta
 git clone https://github.com/joaovsa/slice-proj1
 cd slice-proj1/app/client
