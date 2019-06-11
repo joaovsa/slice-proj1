@@ -7,11 +7,10 @@ LABEL maintainer="Jeeva S. Chelladhurai"
 #instala dependencias pip
 RUN pip install flask
 RUN pip install flask_restful
+RUN pip install requests
 
 #copia o arquivo do servidor p/ o container
 COPY AppClient.py /src/
 
-EXPOSE 5000
-
-#executa a arquivo copiado
-ENTRYPOINT ["python", "/src/AppClient.py"]
+#flag -u proporciona saída no docker log
+CMD [ "python", "-u", "/src/AppClient.py" ]
