@@ -2,7 +2,7 @@ import docker
 import requests
 client = docker.from_env()
 
-id = client.container.run('py_client', 'container iniciado!')
+id = client.containers.run('py_client', 'container iniciado!')
 
 print("0 - SAIR; 1 - POST; 2 - GET\n")
 a = input()
@@ -14,6 +14,7 @@ while(a != 0):
     elif a== 2:
         data = {'opt': '2'}
         r = requests.post('http://localhost:5000/', json=data)
+        print(r)
 
     print("0 - SAIR; 1 - POST; 2 - GET\n")
     a = input()    
