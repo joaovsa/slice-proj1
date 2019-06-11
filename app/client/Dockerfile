@@ -14,4 +14,4 @@ RUN pip install docker
 COPY AppClient.py /src/
 
 #flag -u proporciona saída no docker log
-#CMD [ "python", "-u", "/src/AppClient.py" ]
+CMD [ "python", "-u", "/src/AppClient.py" ]
