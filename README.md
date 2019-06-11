@@ -3,9 +3,18 @@
 Docente: Fábio Verdi
 
 ### Objetivo:
- Criação de server e client envolvidos em containers docker e controlados por Vagrant.
+ Criação de server e client envolvidos em containers Docker e controlados por Vagrant.
 
 ## Passo 1:
+ Instalar o VirtualBox e o Vagrant
+
+```markdown
+ $ sudo apt update
+ $ sudo apt install virtualbox
+ $ sudo apt install vagrant
+```
+
+## Passo 2:
 Clonar este repositório e acessar a pasta /vm
 
 ```markdown
@@ -13,16 +22,16 @@ Clonar este repositório e acessar a pasta /vm
  $ cd slice-pro1/vm
 ```
 
-## Passo 2:
+## Passo 3:
 Verificar e iniciar as VMs. As etapas de instalação e configuração do docker são feitas por scripts sendo executados durante a criação das VMs.
 
 ```markdown
  $ vagrant status
- $ Cat Vagrantfile
+ $ cat Vagrantfile
  $ vagrant up
 ```
 
-## Passo 3:
+## Passo 4:
  Acessar a VM Master e iniciar outro terminal para acessar a VM Worker
 
 ```markdown
@@ -32,9 +41,10 @@ Verificar e iniciar as VMs. As etapas de instalação e configuração do docker
  $ vagrant ssh worker
 ```
 
-## Passo 4:
+## Passo 5:
  ...
 
 ```markdown
  $ ...
 ```
+
