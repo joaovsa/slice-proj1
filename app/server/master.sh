@@ -12,7 +12,6 @@ sudo apt -y install docker-ce docker-ce-cli containerd.io
 sudo systemctl start docker
 sudo systemctl enable docker
 sudo apt -y upgrade
-
 #baixa repositorio e entra na pasta
 git clone https://github.com/joaovsa/slice-proj1
 cd slice-proj1/app/server
@@ -20,6 +19,7 @@ cd slice-proj1/app/server
 #Iniciando o Docker Swarm Master na VM Master
 sudo docker swarm init --advertise-addr 192.168.50.2:2377 | sed 5!d > /vagrant/join.sh
 
+sudo gpasswd -a "${USER}" docker
 
 #Cria imagem do Dockerfile no container
 sudo docker build -t py_server .

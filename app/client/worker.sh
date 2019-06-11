@@ -11,6 +11,7 @@ sudo apt -y install docker-ce docker-ce-cli containerd.io
 sudo systemctl start docker
 sudo systemctl enable docker
 sudo apt -y upgrade
+sudo gpasswd -a "${USER}" docker
 
 #baixa repositorio e entra na pasta
 git clone https://github.com/joaovsa/slice-proj1
