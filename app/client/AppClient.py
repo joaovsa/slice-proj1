@@ -1,3 +1,5 @@
+from datetime import datetime
+import requests
 for i in range(10):
     # Método POST
     data = {'info': datetime.now().strftime("%m/%d/%Y, %H:%M:%S")}
