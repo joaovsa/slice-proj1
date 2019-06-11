@@ -16,5 +16,4 @@ while(a != 0):
         r = requests.post('http://localhost:5000/', json=data)
 
     print("0 - SAIR; 1 - POST; 2 - GET\n")
-    a = input()
-    docker run -d -p 2378:5000 flask-tutorial
+    a = input()    
