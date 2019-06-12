@@ -52,7 +52,7 @@ Verificar e iniciar as VMs. As etapas de instalação e configuração do docker
  Acessar a pasta slice-proj1/app/client, e execute o container docker já gerado automaticamente na VM:
 
 ```markdown
- vagrant@worker$ sudo docker run -y py_client
+ vagrant@worker$ sudo docker run -t py_client
 ```
 ## Saída
 A saída representa 10 tentativas de POST e GET do client ao servidor. O servidor armazena os posts do client (timestamps), e ao ser solicitado de um GET, revolve um JSON com todos os timestamps recebidos por POST.
