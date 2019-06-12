@@ -26,7 +26,7 @@ Clonar este repositório e acessar a pasta /vm
 
 ```markdown
  $ git clone https://github.com/joaovsa/slice-proj1.git
- $ cd slice-pro1/vm
+ $ cd slice-proj1/vm
 ```
 
 ## Passo 3:
@@ -39,7 +39,7 @@ Verificar e iniciar as VMs. As etapas de instalação e configuração do docker
 ```
 
 ## Passo 4:
- Acessar a VM Master e iniciar outro terminal para acessar a VM Worker
+Acessar a VM master e iniciar outro terminal para acessar a VM worker.
 
 ```markdown
  $ vagrant ssh master
@@ -49,18 +49,19 @@ Verificar e iniciar as VMs. As etapas de instalação e configuração do docker
 ```
 
 ## Passo 5:
- Acessar a pasta slice-proj1/app/client, e execute o container docker já gerado automaticamente na VM:
+ Acessar a pasta slice-proj1/app/client e executar o container docker já gerado automaticamente na VM:
 
 ```markdown
  vagrant@worker$ sudo docker run -t py_client
 ```
 ## Saída
-A saída representa 10 tentativas de POST e GET do client ao servidor. O servidor armazena os posts do client (timestamps), e ao ser solicitado de um GET, revolve um JSON com todos os timestamps recebidos por POST.
+A saída representa 10 tentativas de POST e GET do client para  o servidor. O servidor armazena os posts do client (timestamps), e ao ser solicitado via GET, devolve um JSON com todos os timestamps recebidos via POST.
 
 
 ## Considerações e Dificuldades
-O projeto foi de grande aprendizado para os integrantes do projeto, de tal modo e tornaram-se familiares nos níveis básicos no que tange tecnologias habilitadoras de cloud networking. Deste modo, estando aptos à utilizar soluções Docker ou Vagrant em soluções simples do dia a dia. 
+O projeto foi de grande aprendizado para os integrantes do grupo, de tal modo que se tornaram familiares no que diz respeito às tecnologias habilitadoras de cloud networking. Desse modo, estão aptos a utilizar Docker ou Vagrant em soluções simples do dia a dia. 
 
-Para este projeto, a maior dificuldade foi entender os níveis de virtualização e em até que ponto era necessário o aninhamento deles. De modo similar, a estrutura do docker no modo swarm causou questionamento entre os integrantes, já que containers de VMs diferentes foram agrupados no mesmo grupo Swarm. Quanto a dificuldades técnicas do modo swarm, o grupo optou por criar um arquivo acessível à ambas VMs, com a chave para entrar no grupo, ao invés de baixar o arquivo entre VMs através de uma conexão segura SSH através do scp. Isto deve-se ao fato da dificuldade de configurar uma conexão SSH em relação à utilizar um arquivo compartilhado. Entendemos que essa abordagem compromete a segurança, mas o foco deste trabalho é exercitarmos o conhecimento recém-adquirido.
+Para este projeto, a maior dificuldade foi entender os níveis de virtualização e até que ponto era necessário o aninhamento deles. De modo similar, a estrutura do Docker no modo swarm causou questionamento entre os integrantes, já que containers de VMs diferentes foram agrupados no mesmo grupo Swarm. 
+Quanto às dificuldades técnicas do modo swarm, o grupo optou por criar um arquivo acessível em ambas as VMs, com uma chave para entrar no cluster, ao invés de baixar o arquivo entre as VMs, via comando scp. Isso deve-se ao fato da dificuldade de configurar uma conexão SSH para utilizar um arquivo compartilhado. Nós entendemos que essa abordagem compromete a segurança e o foco deste trabalho consiste em exercitar o conhecimento recém-adquirido.
 
-Não conseguimos criar requisições que transportam "docker stats" do container cliente. Isto ocorreu porque não conseguimos executar a imagem docker do servidor através de um script python e obtermos o <img id> do docker a fim de utilizarmos o respectivo método fornecido pelo [Docker Python SDK](https://docker-py.readthedocs.io/en/stable/) que requer tal parâmetro. O arquivo python que executaria a imagem Docker, e o servidor cliente que estaria dentro da imagem p/ enviar requisições ao master, ainda estão no repositório para fins de desenvolvimento futuro. São eles cli_boot.py e AppClient_old.py
+O grupo não criou requisições que transportam "docker stats" do container cliente, porque não conseguiu executar a imagem docker do servidor, a partir de um script Pyhon, para obtermos o  <img id> do Docker, a fim de utilizarmos o respectivo método fornecido pelo [Docker Python SDK](https://docker-py.readthedocs.io/en/stable/) que requer tal parâmetro. O arquivo que executaria a imagem Docker (cli_boot.py) e o servidor cliente que estaria dentro da imagem para enviar requisições ao master (AppClient_old.py), ainda estão no repositório para fins de desenvolvimento futuro. 
